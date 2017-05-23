@@ -23,7 +23,7 @@ public class Client {
             dout = new DataOutputStream(sc.getOutputStream());
 
             //Sends data to the other end.
-            dout.writeBytes("Hello Server" + "\n");
+            dout.writeUTF("Hello Server" + "\n");
 
             /*getInputStream method of Socket class will return InputStream attached to
             that socket instance.
@@ -35,9 +35,6 @@ public class Client {
 
             //Print data received from other end on local console
             System.out.println("Message from Server: " + bf.readLine());
-
-            //Quit server
-            dout.writeBytes("quit");
 
             /*We can use BufferedWriter as well to write data, following code snippet demonstrate that:
 
