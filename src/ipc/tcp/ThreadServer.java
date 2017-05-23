@@ -27,6 +27,7 @@ public class ThreadServer {
                 try {
                     //Wait for a client connection
                     scc = sc.accept();
+                    System.out.println("Local socket address is: " + scc.getLocalSocketAddress());
                     new Worker(scc);
                 } catch (IOException e) {
                     e.printStackTrace();
